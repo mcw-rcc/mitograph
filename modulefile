@@ -1,0 +1,14 @@
+whatis("Name:     "..myModuleName())
+whatis("Version:  "..myModuleVersion())
+whatis("Category: biology, imaging")
+whatis("Keywords: Applications")
+whatis("Description: MitoGraph is a fully automated image processing method and software dedicated to calculating the three-dimensional morphology of mitochondria in live cells.")
+whatis("URL: https://github.com/vianamp/MitoGraph")
+
+local base = "/PATH/TO/CONTAINER"
+local image = pathJoin(base,"ubuntu-20.04_mitograph-3.0_latest.sif")
+local sifExec = "singularity exec "
+
+set_shell_function("MitoGraph",sifExec .. image .. " MitoGraph \$@",sifExec .. image .. " MitoGraph \$*")
+
+depends_on('singularity')
