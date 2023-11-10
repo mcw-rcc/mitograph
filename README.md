@@ -1,4 +1,9 @@
 # mitograph 
-[![https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg](https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg)](https://singularity-hub.org/collections/2418)
 
-Singularity recipe for MitoGraph.
+Singularity recipe and modulefile for running Mitograph on a Linux system. This requires Singularity to build the container file. You can adapt the modulefile for your needs or run the analysis from the command line.
+
+## Run Mitograph container
+
+```
+singularity exec mitograph.sif input_file
+```
