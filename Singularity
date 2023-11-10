@@ -1,5 +1,5 @@
 BootStrap: docker
-From: ubuntu:16.04
+From: ubuntu:20.04
 
 %labels
     Maintainer Matthew Flister
@@ -8,9 +8,10 @@ From: ubuntu:16.04
     This container runs Mitograph.
 
 %post
-    # add paths
-    mkdir -p /scratch/global /scratch/local /rcc/stor1/refdata /rcc/stor1/depts /rcc/stor1/projects
-  
+    # add paths, optional
+    #mkdir -p /hpc /scratch
+
+    export DEBIAN_FRONTEND=noninteractive
     apt-get update && apt-get install -y --no-install-recommends \
         build-essential \
         gcc-multilib \
